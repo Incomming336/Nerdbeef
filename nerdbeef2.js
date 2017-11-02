@@ -54,8 +54,8 @@ app.get('/jquery.mobile.custom.min.js', function(req, res) {
 app.get('/jquery.transit.min.js', function(req, res) {
 	res.sendFile(__dirname + '/public/jquerytransit/jquery.transit.min.js');
 });
-app.get('/fragen.txt', function(req, res) {
-	res.sendFile(__dirname + '/fragen.txt');
+app.get('/fragen.json', function(req, res) {
+	res.sendFile(__dirname + '/fragen.json');
 });
 
 io.sockets.on('connection', function(socket) {

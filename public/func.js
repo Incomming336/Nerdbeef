@@ -385,59 +385,61 @@ function reset_timestamps()
 function read_question(id)
 {
 	clean_admin_question();
-	var location = 'http://'+ip+'/fragen.txt';
+	var location = 'http://'+ip+'/fragen.json';
 	$.get( location, function( data ) {
 		var i=0;
-		var zeilen = data.split('\n');					
-		for(i=0;i<=zeilen.length;i++)
+//		var zeilen = data.split('\n');
+//		for(i=0;i<=zeilen.length;i++)
+        for (frage=0; frage <= data.length; frage++)
 		{
-			var fragen = zeilen[i].split('|');
-			if (fragen[0]==id)
+//			var fragen = zeilen[i].split('|');
+			if (frage["catpunkte"]==id)
 			{
-				if((currentc==headerarray[fragen[0][0]])&&(currentp==$('#'+id.substr(0,id.length)).text()))
+				if((currentc==headerarray[frage["catpunkte"][0]])&&(currentp==$('#'+id.substr(0,id.length)).text()))
 				{
 					console.log("Gleiche Kategorie und Frage, nicht neu geladen");
 				}
 				else
 				{
-					currentc = headerarray[fragen[0][0]];
+					currentc = headerarray[frage["catpunkte"][0]];
 					currentp = id.substr(0,id.length);
 					currentp = $('#'+currentp).text();
-					currentq = fragen[2];
-					questiontype = fragen[1];
-					
+					currentq = frage["frage"];
+					questiontype = frage["frageart"];
+
 					$('#current').text(currentc+': '+currentp+' ('+questiontype+')');
 					$('#frage').text(currentq);
-					
+
 					$("#startquestionbutton").text('Frage starten');
 					if (questiontype == 'simple')
 					{
-						$('#antwort').text('Antwort: '+fragen[3]);
+						$('#antwort').text('Antwort: '+frage["richtig"]);
 					}
 					else if (questiontype == 'multiple')
 					{
-						$('#multiple').text('A) '+fragen[3]);
-						$('#multiple').append('<br>B) '+fragen[4]);
-						$('#multiple').append('<br>C) '+fragen[5]);
-						$('#multiple').append('<br>D) '+fragen[6]);
-						$('#antwort').text('Antwort: '+fragen[7]);
+					    var choices = frage["multi"].split('|');
+						$('#multiple').text('A) '+choices[0]);
+						$('#multiple').append('<br>B) '+choices[1]);
+						$('#multiple').append('<br>C) '+choices[2]);
+						$('#multiple').append('<br>D) '+choices[3]);
+						$('#antwort').text('Antwort: '+frage["richtig"]);
 					}
 					else if (questiontype == 'audio')
 					{
-						var youtubevideo = fragen[3];
+						var youtubevideo = frage["videoid"];
 						var youtubeid = youtubevideo.split('#');
 						var videoid = youtubeid[0];
 						var videoanfang = youtubeid[1];
 						var videoende = youtubeid[2];
-						
+
 						if(videoanfang != '')
 							videoanfang = '&start='+videoanfang;
-						
-						if(videoende != '')
-							videoende = '&end='+videoende;					
 
-						$('#antwort').text('Antwort: '+fragen[4]);
-						var adminaudio = $('<iframe />', { 
+						if(videoende != '')
+							videoende = '&end='+videoende;
+
+						$('#antwort').text('Antwort: '+frage["richtig"]);
+						var adminaudio = $('<iframe />', {
 							width: '560',
 							height: '315',
 							src: 'https://www.youtube.com/embed/'+youtubeid[0]+'?autoplay=0'+videoanfang+videoende,
@@ -450,7 +452,7 @@ function read_question(id)
 					else if (questiontype == 'image')
 					{
 						$('#frage').text('');
-						var adminimage = $('<img />', { 
+						var adminimage = $('<img />', {
 							width: '560',
 							height: '315',
 							src: 'imagequestionimage/'+currentq,
@@ -458,11 +460,11 @@ function read_question(id)
 							iv_load_policy: '3',
 						});
 						adminimage.appendTo($('#media'));
-						$('#antwort').text('Antwort: '+fragen[3]);
+						$('#antwort').text('Antwort: '+frage["richtig"]);
 					}
 
-					var triviatype = fragen[fragen.length-2];
-					var trivia = fragen[fragen.length-1];
+					var triviatype = frage["triviaart"];
+					var trivia = frage["trivia"];
 					if(questiontype == 'image')
 						trivia = currentq;
 
