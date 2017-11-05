@@ -388,11 +388,9 @@ function read_question(id)
 	var location = 'http://'+ip+'/fragen.json';
 	$.get( location, function( data ) {
 		var i=0;
-//		var zeilen = data.split('\n');
-//		for(i=0;i<=zeilen.length;i++)
-        for (frage=0; frage <= data.length; frage++)
+        for (i=0; i <= data.length; i++)
 		{
-//			var fragen = zeilen[i].split('|');
+		    var frage = data[i]
 			if (frage["catpunkte"]==id)
 			{
 				if((currentc==headerarray[frage["catpunkte"][0]])&&(currentp==$('#'+id.substr(0,id.length)).text()))

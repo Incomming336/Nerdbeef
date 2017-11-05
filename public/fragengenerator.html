@@ -101,7 +101,7 @@
 								<option value=audio>audio</option>\
 								<option value=imagequestionimage>imagequestionimage</option>\
 								</select></td>\
-								<td width=170><input type=text id=trivia name='+punkteid+' value=ohne></td></tr>');
+								<td width=170><input type=text id=trivia name='+punkteid+'></td></tr>');
 						}
 						$(this).append('<tr class=header><td colspan=9>&nbsp;</td></tr>');
 					});
@@ -179,12 +179,21 @@
 							$('tr').not('.header').each(function () {
 								currentQuestion = data[questionNumber++]
 								$(this).find('[id=frageart]').val(currentQuestion["frageart"])
+								$(".frageselect").trigger("change")>
+							})
+							questionNumber = 0
+							$('tr').not('.header').each(function () {
+								currentQuestion = data[questionNumber++]
+								$(this).find('[id=triviaart]').val(currentQuestion["triviaart"])
+								$(".triviaselect").trigger("change")
+							})
+							questionNumber = 0
+							$('tr').not('.header').each(function () {
+								currentQuestion = data[questionNumber++]
 								$(this).find('[id=frage]').val(currentQuestion["frage"])
-								console.log(currentQuestion["frage"] + "test")
 								$(this).find('[id=videoid]').val(currentQuestion["videoid"])
 								$(this).find('[id=multi]').val(currentQuestion["multi"])
 								$(this).find('[id=richtig]').val(currentQuestion["richtig"])
-								$(this).find('[id=triviaart]').val(currentQuestion["triviaart"])
 								$(this).find('[id=trivia]').val(currentQuestion["trivia"])
 							})
 						})
