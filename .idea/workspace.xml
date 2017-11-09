@@ -5,7 +5,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/config.json" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/ip.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nerdbeef2.js" afterPath="$PROJECT_DIR$/nerdbeef2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin.html" afterPath="$PROJECT_DIR$/public/admin.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,14 +19,26 @@
       <file leaf-file-name="fragengenerator.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/fragengenerator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="97" column="65" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nerdbeef2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="227" column="81" lean-forward="false" selection-start-line="227" selection-start-column="81" selection-end-line="227" selection-end-column="81" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#td#0;n#tr#6;n#table#0;n#form#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nerdbeef2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nerdbeef2.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="404">
@@ -39,7 +51,7 @@
       <file leaf-file-name="func.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/func.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5150">
+            <state relative-caret-position="5236">
               <caret line="308" column="12" lean-forward="false" selection-start-line="308" selection-start-column="12" selection-end-line="308" selection-end-column="12" />
               <folding />
             </state>
@@ -60,10 +72,12 @@
       <find>trivia</find>
       <find>fragen.json</find>
       <find>not found</find>
+      <find>800</find>
     </findStrings>
     <dirStrings>
       <dir>D:\nerdbeef2.34</dir>
       <dir>D:\projects\Nerdbeef</dir>
+      <dir>D:\projects\Nerdbeef\public</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -83,6 +97,7 @@
         <option value="$PROJECT_DIR$/public/func.js" />
         <option value="$PROJECT_DIR$/public/fragengenerator.html" />
         <option value="$PROJECT_DIR$/nerdbeef2.js" />
+        <option value="$PROJECT_DIR$/public/admin.html" />
       </list>
     </option>
   </component>
@@ -108,9 +123,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -128,6 +140,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509925323536</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="You can now choose the name of the question file at the beginning">
+      <created>1510261288201</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1510261288201</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -287,7 +309,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26066098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -312,13 +334,38 @@
     <MESSAGE value="Deleted Fragen.txt" />
     <MESSAGE value="Found terrible fix for current bug" />
     <MESSAGE value="Oops" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oops" />
+    <MESSAGE value="You can now choose the name of the question file at the beginning" />
+    <option name="LAST_COMMIT_MESSAGE" value="You can now choose the name of the question file at the beginning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/fragengenerator.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="97" column="65" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/func.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5236">
+          <caret line="308" column="12" lean-forward="false" selection-start-line="308" selection-start-column="12" selection-end-line="308" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nerdbeef2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="138" column="30" lean-forward="false" selection-start-line="138" selection-start-column="30" selection-end-line="138" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/fragengenerator.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -479,22 +526,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-765">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/func.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5150">
+        <state relative-caret-position="5236">
           <caret line="308" column="12" lean-forward="false" selection-start-line="308" selection-start-column="12" selection-end-line="308" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/fragengenerator.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="97" column="65" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -504,6 +542,24 @@
         <state relative-caret-position="404">
           <caret line="138" column="30" lean-forward="false" selection-start-line="138" selection-start-column="30" selection-end-line="138" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/fragengenerator.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="227" column="81" lean-forward="false" selection-start-line="227" selection-start-column="81" selection-end-line="227" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#td#0;n#tr#6;n#table#0;n#form#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
