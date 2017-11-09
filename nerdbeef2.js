@@ -12,6 +12,7 @@ var adressen = [];
 var fs = require('fs');
 var open = require('open');
 var globalplayers = [];
+var file = 'fragen'
 globalplayers.splice(0,globalplayers.length);
 adressen.splice(0,adressen.length);
 
@@ -55,7 +56,7 @@ app.get('/jquery.transit.min.js', function(req, res) {
 	res.sendFile(__dirname + '/public/jquerytransit/jquery.transit.min.js');
 });
 app.get('/fragen.json', function(req, res) {
-	res.sendFile(__dirname + '/fragen.json');
+	res.sendFile(__dirname + '/' + file + '.json');
 });
 
 io.sockets.on('connection', function(socket) {
@@ -124,18 +125,21 @@ Object.keys(ifaces).forEach(function (ifname) {
 console.log("-----------------------------------");
 
 rl.question('Bitte wählen Sie das gewünschte Interface: ', (answer) => {
-	iptext = "var ip=\""+adressen[answer]+"\";";
-	fs.writeFile('ip.js', iptext, function (err) {
-		if (err) {
-			console.log(err);
-		}
-	});
-	open("http://"+adressen[answer]);
-	console.log("Server erreichbar über: http://"+adressen[answer]);
-	console.log("");
-	console.log("Server beenden mit Tastenkombination");
-	console.log("STRG+C");
-	rl.close();
+    iptext = "var ip=\""+adressen[answer]+"\";";
+    fs.writeFile('ip.js', iptext, function (err) {
+        if (err) {
+            console.log(err);
+        }
+    });
+    rl.question('Bitte geben sie ein welche Fragen Sie verwenden wollen (Ohne Endung): ', (fileAnswer) => {
+        file = fileAnswer
+        open("http://"+adressen[answer]);
+        console.log("Server erreichbar über: http://"+adressen[answer]);
+        console.log("");
+        console.log("Server beenden mit Tastenkombination");
+        console.log("STRG+C");
+        rl.close()
+    });
 });
 
 server.listen(conf.port);
