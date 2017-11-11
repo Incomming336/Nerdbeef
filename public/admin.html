@@ -77,6 +77,26 @@
 				socket.emit('startquestion',data);
 				$('.pointsrow').off();
 			});
+
+			$('#intro').click(function(){
+				socket.emit('startVideo', 'Intro.mp4');
+			});
+
+			$('#round1').click(function(){
+				socket.emit('startVideo', 'Runde1.mp4');
+			});
+
+			$('#round2').click(function(){
+				socket.emit('startVideo', 'Runde2.mp4');
+			});
+
+			$('#final').click(function(){
+				socket.emit('startVideo', 'Finalrunde.mp4');
+			});
+
+			$('#quickQuestions').click(function(){
+				socket.emit('startVideo', 'Schnellfragerunde.mp4');
+			});
 			
 			$('#clean').click(function(){
 				clean_admin_question();
@@ -257,6 +277,11 @@
 						<div class="fixbuttons" id="fix">Frage reparieren</div>
 						<div class="fixbuttons" id="del">Frage l&ouml;schen</div>
 						<div class="fixbuttons" id="clean">Vorschau entfernen</div>
+						<div class="fixbuttons" id="intro">Intro</div>
+						<div class="fixbuttons" id="round1">Runde 1</div>
+						<div class="fixbuttons" id="round2">Runde 2</div>
+						<div class="fixbuttons" id="final">Finalrunde</div>
+						<div class="fixbuttons" id="quickQuestions">Schnellfragerunde</div>
 					</center>
 					</td>
 				</tr>

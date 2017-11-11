@@ -11,13 +11,12 @@ var currentc;
 var currentp;
 var currentq;
 var questiontype;
-//var floating_buzzer_icons = ['bear.png','flower.png','homer.png','love.png','summer.png','sunny.png'];
 var zonkaudio = new Audio('/sounds/zonk.mp3');
-var color_red = ['#F44336', '#FFEBEE', '#FFCDD2', '#EF9A9A', '#E57373', '#EF5350','#F44336', '#E53935', '#D32F2F', '#C62828', '#B71C1C'];
-var color_pink = ['#E91E63', '#FCE4EC', '#F8BBD0', '#F48FB1', '#F06292', '#EC407A', '#E91E63', '#D81B60', '#C2185B', '#AD1457', '#880E4F'];
-var color_purple = ['#9C27B0', '#F3E5F5', '#E1BEE7', '#CE93D8', '#BA68C8', '#AB47BC', '#9C27B0', '#8E24AA', '#7B1FA2', '#6A1B9A', '#4A148C'];
-var color_deep_purple = ['#673AB7', '#EDE7F6', '#D1C4E9', '#B39DDB', '#9575CD', '#7E57C2', '#673AB7', '#5E35B1', '#512DA8', '#4527A0', '#311B92'];
-var color_indigo = ['#3F51B5', '#E8EAF6', '#C5CAE9', '#9FA8DA', '#7986CB', '#5C6BC0', '#3F51B5', '#3949AB', '#303F9F', '#283593', '#1A237E'];
+var color_red = ['#FF4B4C', '#FE3A3B', '#FE2725', '#F81A19', '#EE0C0D', '#EF5350','#F44336', '#E53935', '#D32F2F', '#C62828', '#B71C1C'];
+var color_pink = ['#FF4282', '#FF256D', '#FF1F6B', '#F20E5B', '#E4004D', '#EC407A', '#E91E63', '#D81B60', '#C2185B', '#AD1457', '#880E4F'];
+var color_purple = ['#C524E2', '#B615D3', '#A70CC2', '#9804B2', '#9100A8', '#AB47BC', '#9C27B0', '#8E24AA', '#7B1FA2', '#6A1B9A', '#4A148C'];
+var color_deep_purple = ['#645DDE', '#514CCD', '#403BBB', '#312CAA', '#251F99', '#7E57C2', '#673AB7', '#5E35B1', '#512DA8', '#4527A0', '#311B92'];
+var color_indigo = ['#4DC3E1', '#3EB1D0', '#2C9FBC', '#1E8DA9', '#12809B', '#5C6BC0', '#3F51B5', '#3949AB', '#303F9F', '#283593', '#1A237E'];
 var color_blue = ['#2196F3', '#E3F2FD', '#BBDEFB', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3', '#1E88E5', '#1976D2', '#1565C0', '#0D47A1'];
 var color_light_blue = ['#03A9F4', '#E1F5FE', '#B3E5FC', '#81D4FA', '#4FC3F7', '#29B6F6', '#03A9F4', '#039BE5', '#0288D1', '#0277BD', '#01579B'];
 var color_cyan = ['#00BCD4', '#E0F7FA', '#B2EBF2', '#80DEEA', '#4DD0E1', '#26C6DA', '#00BCD4', '#00ACC1', '#0097A7', '#00838F', '#006064'];
@@ -69,6 +68,21 @@ function refresh_drag_drop()
 		zIndex: 1,
 		revert: true,
 	});
+}
+
+function start_video(file){
+    if($('#video').is(':empty')) {
+        var video = $('<iframe />', {
+            height: '1080',
+            width: '1920',
+            src: 'videos/' + file,
+            frameborder: '0',
+            iv_load_policy: '3'
+        });
+        video.appendTo($('#video'));
+    } else {
+        $( "#video" ).empty();
+    }
 }
 
 function start_question(data)
@@ -130,7 +144,6 @@ function points_recalc(data)
 		var aktuelle_id = $(this).attr('id').substr(1,4);
 		if(aktuelle_id==val)
 		{
-			$(this).find('*').not('.borderfake').remove();
 			var div = document.createElement('div');
 			$(div).addClass('drag').text(newval).draggable({ revert: true}).appendTo($(this));
 		}
@@ -199,13 +212,8 @@ function sync_game(data)
 	var pointsarrayLength = parseInt(pointsarray.length);
 	for (i=0; i<headerarrayLength; i++)
 	{
-		if(i==0)
-			var ersteletztespalteborder = 'style=\'border-left:1px solid white;\' ';
-		else if (i==(headerarrayLength-1))
-			var ersteletztespalteborder = 'style=\'border-right:2px solid white;\' ';
-		else
-			var ersteletztespalteborder = '';
-		
+        var ersteletztespalteborder = '';
+
 		$("#spielfeldheader").append('<td id=header '+ersteletztespalteborder+'>'+headerarray[i]+'</td>');
 	}
 
@@ -231,7 +239,7 @@ function sync_game(data)
 				var erstezeilediv='';
 				var erstezeileborder='';
 			}
-			$("#spielfelddiv table #points").last().append('<td class=pointsrow style=\'position:relative;'+erstezeileborder+'background-color:'+colorarray[p][i+3]+'\' id='+p+pointsarray[i]+'>'+erstezeilediv+'<div class=drag>'+pointsarray[i]+'</div></td>');
+			$("#spielfelddiv table #points").last().append('<td class=pointsrow style=\'position:relative;'+erstezeileborder+'background-color:'+colorarray[p][i]+'\' id='+p+pointsarray[i]+'>'+erstezeilediv+'<div class=drag>'+pointsarray[i]+'</div></td>');
 		}
 		$("#spielfelddiv table").append('</tr>');
 	}

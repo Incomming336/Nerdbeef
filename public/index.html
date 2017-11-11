@@ -71,6 +71,10 @@
 				questiontype = data.questiontype;
 				start_question(data);
 			});
+
+			socket.on('start_video', function(filename) {
+				start_video(filename);
+			});
 			
 			socket.on('buzzer_accepted', function(data) {
 				buzzer_accepted(data);
@@ -104,6 +108,7 @@
 				<a href="./admin" target="_blank">Adminbereich</a>
 			</div>
 		</div>
+		<div id="video"></div>
 		<div id="floatingtrivia">
 			<div id="triviatitle"><div id="triviatitlecontent"></div></div>
 			<div id="trivia"></div>
@@ -118,6 +123,7 @@
 			<div id="pietimerfrageDEAKTIVIERT"></div>
 			<div id="pietimermain"></div>
 		</div>
+		<div id="scoresdiv"></div>
 		<div id="gamewrapper">
 			<div id="spielfelddiv">
 					<table id="spielfeld" >
@@ -128,6 +134,5 @@
 		<div id="imagequestion">
 			<img id="imagequestionimage" src="" alt="" />
 		</div>
-		<div id="scoresdiv"><span id="stand"></span></div>
 	</body>
 </html>

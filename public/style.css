@@ -14,6 +14,7 @@
 			html, body {
 				width: 1920px;
 				height: 1080px;
+				background: url('/images/nerdbeef.png') no-repeat center;
 				margin: 0;
 				padding: 0;
 				position: relative;
@@ -35,22 +36,21 @@
 				margin: 0;
 				border: 0;
 				width: 1920px;
-				height: 980px;
+				height: 970px;
 				border: 0;
 			}
 			#spielfeld {
 				float: left;
-				width: 1920px;
-				height: 980px;
+				width: 1860px;
+				height: 940px;
 				background-color: rgba(0, 0, 0, 0);
-				-background: url('/images/nerdbeef.png') no-repeat center;
+				margin: 0px 30px 30px 30px;
 				font-size: 60px;
 				font-weight: bold;
 				vertical-align: center;
 				text-align: center;
 			}
 			#header{
-				background-color: #607D8B;
 				width: 16%;
 				height: 150px;		
 				font-size: 50px;
@@ -61,18 +61,13 @@
 			}
 			td.pointsrow {
 				border: 0;
-				border: 2px solid white;
 			}
 			#scoresdiv {
-				background-color: #607D8B;
-				width: 1917px;
-				overflow: hidden;
-				margin-left: 1px;
-				margin-right: 2px;
-				padding-top: 10px;
 				height: 100px;
+				padding-top: 10px;
 				text-align: center;
-				position: relative;
+				display: table;
+				margin: auto;
 			}
 			#playerwrapper {
 				float: left;
@@ -307,11 +302,4 @@
 				position: relative;
 				left: -190px;
 				top: 10px;
-			}
-			.borderfake {
-				position: absolute;
-				height: 6px;
-				width: 100%;
-				margin-left: -1px;
-				border: 0;
 			}

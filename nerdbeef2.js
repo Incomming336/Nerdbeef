@@ -78,6 +78,9 @@ io.sockets.on('connection', function(socket) {
 	socket.on('startquestion', function(data) {
 		io.sockets.emit('start_question', data);
 	});
+    socket.on('startVideo', function(filename) {
+        io.sockets.emit('start_video', filename);
+    });
 	socket.on('buzzerresponse', function(data) {
 		io.sockets.emit('buzzer_accepted', data);
 	});
