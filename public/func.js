@@ -144,6 +144,7 @@ function points_recalc(data)
 		var aktuelle_id = $(this).attr('id').substr(1,4);
 		if(aktuelle_id==val)
 		{
+			$(this).find('*').not('.borderfake').remove();
 			var div = document.createElement('div');
 			$(div).addClass('drag').text(newval).draggable({ revert: true}).appendTo($(this));
 		}
